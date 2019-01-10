@@ -33,7 +33,7 @@ namespace AttentiHomeChallenge
                         }
 
                         pixelStack.Push(pixel);
-                        IterativeDFS(pixelStack, randomColor);
+                        DFS(pixelStack, randomColor);
                         numberOfIslands++;
                     }
                 }
@@ -41,7 +41,7 @@ namespace AttentiHomeChallenge
             return numberOfIslands;
         }
 
-        public static void IterativeDFS(Stack<Pixel> pixelsStack, ConsoleColor color)
+        public static void DFS(Stack<Pixel> pixelsStack, ConsoleColor color)
         {
             while (pixelsStack.Count > 0)
             {
