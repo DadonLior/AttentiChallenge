@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,7 @@ namespace AttentiHomeChallenge
 {
     class Program
     {
-        static Random random = new Random();
-        static Array consoleColors = Enum.GetValues(typeof(ConsoleColor));
-        static IEnumerable<ConsoleColor> excludedColors = new HashSet<ConsoleColor>() { ConsoleColor.Gray, ConsoleColor.Black };
 
-        static IEnumerable<int> range = Enumerable.Range(1, consoleColors.Length);
 
         static void Main(string[] args)
         {
@@ -36,8 +33,7 @@ namespace AttentiHomeChallenge
                     Console.WriteLine("Before find number of islands");
                     board.Print();
                 }
-
-                var numberOfIslands = GetNumberOfIsland(board);
+                var numberOfIslands = Algorithm.GetNumberOfIsland(board);
 
                 Console.WriteLine($"Number of islands {numberOfIslands}");
 
@@ -68,45 +64,6 @@ namespace AttentiHomeChallenge
             {
                 Console.WriteLine("Invalid input, please try again");
                 Console.Write(message);
-            }
-        }
-
-        static int GetNumberOfIsland(Board board)
-        {
-            int count = 0;
-            ConsoleColor randomColor = ConsoleColor.Gray;
-            for (int i = 0; i < board.NumOfRows; i++)
-            {
-                for (int j = 0; j < board.NumOfCols; j++)
-                {
-                    Pixel pixel = board.GetPixel(i, j);
-
-                    if (pixel.Val == 1)
-                    {
-                        randomColor = ConsoleColor.Gray;
-                        while (excludedColors.Contains(randomColor))
-                        {
-                            randomColor = (ConsoleColor)consoleColors.GetValue(random.Next(consoleColors.Length));
-                        }
-                        DFS(pixel, randomColor);
-                        count++;
-                    }
-                }
-            }
-            return count;
-        }
-
-        static void DFS(Pixel pixel, ConsoleColor color)
-        {
-            pixel.Val++;
-            pixel.Color = color;
-
-            foreach (var neighbour in pixel.Neighbours)
-            {
-                if (neighbour.Val == 1)
-                {
-                    DFS(neighbour, color);
-                }
             }
         }
     }
