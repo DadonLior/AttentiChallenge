@@ -1,6 +1,7 @@
 # AttentiChallenge
 
 
+
 Requirements:
 The app will requests user input(1): n,m and when the user taps “RANDOMIZE” the app will generate a random bitmap with black white pixels – and display it on screen(2). Then the app will present a “SOLVE” button that solves(3) the bitmap according to the algorithm we discussed. Each island will be colored differently.
 
@@ -21,3 +22,5 @@ Double click on AttentiHomeChallenge.sln will open Visual Studio
 right click on desire project then click on set as startup project
 
 Hit F5.
+
+
