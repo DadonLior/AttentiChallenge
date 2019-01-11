@@ -53,6 +53,8 @@ namespace AttentiHomeCallengeUI
             {
                 int columns, rows;
                 GetNumberOfRowsAndColumnsFromTextBox(out rows, out columns);
+                if (rows < 1 || columns < 1)
+                    throw new InvalidExpressionException();
                 return true;
             }
             catch (Exception)
@@ -214,6 +216,7 @@ namespace AttentiHomeCallengeUI
                 {
                     Pixel pixel = Board.GetPixel(i, j);
                     Buttons[i][j].BackColor = DrawingColor(pixel.Color);
+                    Buttons[i][j].Enabled = false;
                 }
             }
 
