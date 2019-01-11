@@ -11,7 +11,7 @@ Please note - for bonus points,  generate an empty bitmap and let the user draw 
 # Getting Started 
 Two projects has been developed using same alogrithm:
 
-1.Console application named - AttentiHomeChallenge.\
+1.Console application solution of 1000X1000  named - AttentiHomeChallenge.\
 2.Winform application name - AttentiHomeChallengeUI. 
 
 
