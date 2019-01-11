@@ -21,7 +21,6 @@ namespace AttentiHomeChallenge
 
             InitBoard();
             SetNeighboursToEachPixel();
-            SetRandomIslands();
         }
 
 
@@ -36,7 +35,7 @@ namespace AttentiHomeChallenge
             }
         }
 
-        private void SetRandomIslands()
+        public void SetRandomIslands()
         {
             Random random = new Random();
             ForEachPixel((i, j) => pixels[i][j].Val = random.Next(2));
