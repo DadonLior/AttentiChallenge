@@ -41,7 +41,7 @@ namespace AttentiHomeChallenge
             return numberOfIslands;
         }
 
-        public static void DFS(Stack<Pixel> pixelsStack, ConsoleColor color)
+        private static void DFS(Stack<Pixel> pixelsStack, ConsoleColor color)
         {
             while (pixelsStack.Count > 0)
             {

@@ -27,6 +27,7 @@ namespace AttentiHomeChallenge
 
                 Console.WriteLine(Environment.NewLine + "Generate random bitmap");
                 Board board = new Board(numberOfRows, numberOfCols);
+                board.SetRandomIslands();
 
                 if (displayMatrix)
                 {
